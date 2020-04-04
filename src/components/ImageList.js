@@ -1,0 +1,34 @@
+import './ImageList.css';
+import React from 'react';
+import ImageCard from './ImageCard';
+
+const ImageList = props => {
+  // const images = props.images.map(image => {
+  //   return (
+  //     <div key={image.id}>
+  //       <img alt={image.description} src={image.urls.regular} />
+  //     </div>
+  //   );
+  //   // return <img key={image.id} src={image.urls.regular} />;
+  // });
+
+  // const images = props.images.map(({id, description, urls}) => {
+  //   return (
+  //     <div key={id}>
+  //       <img alt={description} src={urls.regular} />
+  //     </div>
+  //   );
+  // });
+
+  const images = props.images.map(image => {
+    return <ImageCard key={image.id} image={image} />;
+  });
+
+  return (
+    <div className="image-list">
+      {images}
+    </div>
+  );
+}
+
+export default ImageList;
